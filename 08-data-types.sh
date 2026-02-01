@@ -11,4 +11,4 @@ echo "sum of total is: $SUM"
 #Array
 FRUITS=("Apple" "Kiwi" "Guva")
 
-echo "Fruits are: ${FRUITS[@]}
+echo "Fruits are: ${FRUITS[@]}"
