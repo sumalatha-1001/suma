@@ -9,7 +9,7 @@ elif [ $MARKS -ge 75 ]; then
 elif [ $MARKS -ge 60 ]; then
     echo "Grade C"
 elif [ $MARKS -le 35 ]; then
-    echo "Grade C"    
+    echo "failed"    
 else
-    echo "Grade failed"
+    echo "Absent"
 fi
