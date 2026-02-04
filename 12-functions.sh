@@ -8,6 +8,7 @@ if [ $USERID -ne 0 ]; then
 fi
 
 # by defaulf shell will not execute, when we call it will execute
+
 VALIDATE(){
     if [ $1 -ne 0 ]; then
         echo "$2...FAILURE"
@@ -15,7 +16,7 @@ VALIDATE(){
     else   
         echo "$2...SUCCESS"
     fi
-        }
+}
 
 dnf install nginx -y
 validate $? "Installing Nginx"
