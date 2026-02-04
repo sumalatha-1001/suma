@@ -9,7 +9,7 @@ fi
 
 # by defaulf shell will not execute, when we call it will execute
 
-VALIDATE(){
+validate(){
     if [ $1 -ne 0 ]; then
         echo "$2...FAILURE"
         exit 1
