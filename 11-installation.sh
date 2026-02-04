@@ -1,0 +1,19 @@
+#!/bin/bash
+
+USERID=$(id -u)
+
+if [USERID -ne 0]; then
+    echo "please execute this script with root user access"
+    exit 1    
+fi
+
+echo "installing Nginx"
+
+dnf install nginx -y
+
+if [$? -ne 0]; then
+    echo "installing Nginx...FAILURE"
+    exit 1    
+else
+    echo "installing Nginx...SUCCESS"
+fi    
