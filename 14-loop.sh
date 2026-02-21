@@ -2,9 +2,8 @@
 
 
 
-for i in {1..5}
+for user in $(cut -d: -f1 /etc/passwd)
 do
-  echo "Restart attempt $i"
+    echo "System user: $user"
 done
-
 
