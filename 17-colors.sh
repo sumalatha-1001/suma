@@ -3,6 +3,7 @@
 USERID=$(id -u)
 LOG_FOLDER="/var/log/shell-script"
 LOG_FILE="/var/log/shell-script/$0.log"
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -19,10 +20,10 @@ mkdir -p $LOG_FOLDER
 
 validate(){
     if [ $1 -ne 0 ]; then
-        echo "$2...$R FAILURE $N" | tee -a $LOG_FILE
+        echo -e "$2...$R FAILURE $N" | tee -a $LOG_FILE
         exit 1
     else   
-        echo "$2...$G SUCCESS $N" | tee -a $LOG_FILE
+        echo -e "$2...$G SUCCESS $N" | tee -a $LOG_FILE
     fi
 }
 
@@ -32,8 +33,8 @@ do
     if [ $? -ne 0 ]; then
         echo "$package not installed, installing now"
         dnf install $package -y &>>$LOG_FILE
-        validate $? "$pakacge installation"
+        validate $? "$package installation"
     else
-        echo "$package already installed, $Y skipping $N"
+        echo -e "$package already installed, $Y skipping $N"
     fi
 done
