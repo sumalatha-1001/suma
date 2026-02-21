@@ -1,13 +1,13 @@
 #!/bin/bash
 
+USERID=$(id -u)
+LOG_FOLDER="/var/log/shell-script"
+LOG_FILE="/var/log/shell-script/$0.log"
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-
-USERID=$(id -u)
-LOG_FOLDER="/var/log/shell-script"
-LOG_FILE="/var/log/shell-script/$0.log"
 
 if [ $USERID -ne 0 ]; then
     echo "please execute this script with root user access" | tee -a $LOG_FILE
